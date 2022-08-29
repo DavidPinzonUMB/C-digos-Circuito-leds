@@ -1,0 +1,212 @@
+INTEGRANTES
+- Dany Vanessa Lugo Escobar
+- Helenn Daniela Santana Cuervo 
+- David Alejandro Pinzon Benítez 
+
+
+
+from machine import Pin as pin
+from utime import sleep as pausa
+led1 = pin(13,pin.OUT)
+led2 = pin(14,pin.OUT)
+led3 = pin(26,pin.OUT)
+led4 = pin(25,pin.OUT)
+led5 = pin(32,pin.OUT)
+led6 = pin(18,pin.OUT)
+led7 = pin(19,pin.OUT)
+led8 = pin(21,pin.OUT)
+led9 = pin(22,pin.OUT)
+led10 = pin(23,pin.OUT)
+pins = [13, 14, 26, 25, 32, 18, 19, 21, 22, 23]
+leds = []
+todos = [led1,led2,led3,led4,led5,led6,led7,led8,led9,led10]
+pausa = 0.1
+
+#Pulsadores
+botonR = pin(15,pin.IN)
+botonN = pin(16,pin.IN)
+botonZ = pin(3,pin.IN)
+botonV = pin(4,pin.IN)
+botonA = pin(17,pin.IN)
+
+def codigo1 ():
+    print("Secuencia Uno")
+    led1.value(1)
+    sleep(pausa)
+    led1.value(0)
+    sleep(pausa)
+    led2.value(1)
+    sleep(pausa)
+    led2.value(0)
+    sleep(pausa)
+    led3.value(1)
+    sleep(pausa)
+    led3.value(0)
+    sleep(pausa)
+    led4.value(1)
+    sleep(pausa)
+    led4.value(0)
+    sleep(pausa)
+    led5.value(1)
+    sleep(pausa)
+    led5.value(0)
+    sleep(pausa)
+    led6.value(1)
+    sleep(pausa)
+    led6.value(0)
+    sleep(pausa)
+    led7.value(1)
+    sleep(pausa)
+    led7.value(0)
+    sleep(pausa)
+    led8.value(1)
+    sleep(pausa)
+    led8.value(0)
+    sleep(pausa)
+    led9.value(1)
+    sleep(pausa)
+    led9.value(0)
+    sleep(pausa)
+    led10.value(1)
+    sleep(pausa)
+    led10.value(0)
+
+def codigo2():
+    print("Secuencia Dos")
+def print_led(a,b,c,d,e,f,g,h,i,j):
+    led1.value(a)
+    led2.value(b)
+    led3.value(c)
+    led4.value(d)
+    led5.value(e)
+    led6.value(f)
+    led7.value(g)
+    led8.value(h)
+    led9.value(i)
+    led10.value(j)
+    sleep(pausa)
+  while True:
+    print_led(1,1,0,0,0,0,0,0,0,0)
+    print_led(0,0,1,1,0,0,0,0,0,0)
+    print_led(0,0,0,0,1,1,0,0,0,0)
+    print_led(0,0,0,0,0,0,1,1,0,0)
+    print_led(0,0,0,0,0,0,0,0,1,1)
+    print_led(0,0,0,0,0,0,1,1,0,0)
+    print_led(0,0,0,0,1,1,0,0,0,0)
+    print_led(0,0,1,1,0,0,0,0,0,0)
+    print_led(1,1,0,0,0,0,0,0,0,0)
+    print_led(1,1,1,1,1,1,1,1,1,1)
+    
+def codigo3():
+    for elemento in todos:
+        elemento.value(1)
+        sleep(pausa)
+        elemento.value(0)
+        sleep(pausa)
+    for elemento in reversed(todos):
+        elemento.value(1)
+        sleep(pausa)
+        elemento.value(0)
+        sleep(pausa)
+
+def codigo4():
+    for i in ledt:
+        for j in range (2):
+            i.value(not i.value())
+            sleep(pausa)
+    for i in reversed(ledt):
+        for j in range (2):
+            i.value(not i.value())
+            sleep(pausa)
+
+def codigo5():
+for i in pins:
+    leds.append (pin(i, pin.OUT))
+    for i in leds:
+        for j in range(2):
+            i.value(not i.value())
+            sleep(pausa)
+    for i in reversed (leds):
+        for j in range(2):
+            i.value(not i.value())
+            sleep(pausa)
+
+def suma():
+    pausa = pausa + 0.1
+    
+def resta():
+    pausa = pausa - 0.1
+    
+while (True): 
+      if( botonR.value()):
+       codigo1()
+       if( botonN.value()):
+        codigo2()
+      else:
+        if(botonN.value()):
+         codigo2() 
+               
+      if(not botonA.value()):
+       codigo3()
+      else:
+        if(not botonA.value()):
+         codigo3()
+         
+      if( not botonV.value()):
+       codigo4()
+      else:
+        if(not botonV.value()):
+         codigo4()
+         
+      if( not botonA.value()):
+       codigo5()
+      else:
+        if(not botonA.value()):
+         codigo5()
+      if(boton1.value())
+       suma()
+      else:
+        if(boton2.value()):
+         resta()               
+      if(botonR.value() & botonN.value()):
+       codigo1()
+       codigo2()
+
+      if(botonR.value() & botonA.value()):
+       codigo1()
+       codigo5()
+
+      if(botonR.value() & botonV.value()):
+       codigo1()
+       codigo4()
+      if(botonN.value() & botonA.value()):
+       codigo2()
+       codigo5()
+
+      if(botonN.value() & botonV.value()):
+       codigo2()
+       codigo4()
+
+      if(botonA.value() & botonV.value()):
+       codigo5()
+       codigo4()
+      if(botonR.value() & botonN.value() & botonA.value()):
+       codigo1()
+       codigo2()
+       codigo5()
+
+      if(botonR.value() & botonN.value() & botonV.value()):
+       codigo1()
+       codigo2()
+       codigo4()
+
+      if(botonN.value() & botonA.value() & botonV.value()):
+       codigo2()
+       codigo5()
+       codigo4()
+
+      if(botonR.value() & botonN.value() & botonA.value() & botonV.value()):
+       codigo1()
+       codigo2()
+       codigo5()
+       codigo4()
